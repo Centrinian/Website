@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centrinian Publishing Ltd</title>
-    <meta name="description" content="Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,6 +39,7 @@
             line-height: 1.6;
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -50,9 +50,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255,255,255,0.96);
+            background: var(--bg-white);
             border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(10px);
         }
 
         .logo {
@@ -81,7 +80,7 @@
 
         .nav-center {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
@@ -106,15 +105,17 @@
 
         .nav-icon {
             color: var(--text-mid);
-            font-size: 1.05rem;
-            text-decoration: none;
+            font-size: 1.1rem;
+            cursor: pointer;
             transition: color 0.3s;
+            text-decoration: none;
         }
 
         .nav-icon:hover {
             color: var(--text-dark);
         }
 
+        /* Hero Section */
         .hero {
             padding: 7rem 4rem 4rem;
             display: grid;
@@ -127,7 +128,7 @@
         }
 
         .hero-text {
-            max-width: 560px;
+            max-width: 500px;
         }
 
         .hero-label {
@@ -161,14 +162,13 @@
             font-size: 1rem;
             color: var(--text-mid);
             margin-bottom: 2rem;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .hero-cta {
             display: flex;
             gap: 1rem;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -181,7 +181,6 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            display: inline-block;
         }
 
         .btn-primary {
@@ -204,6 +203,7 @@
             border-color: var(--text-dark);
         }
 
+        /* Hero Books Display */
         .hero-books {
             position: relative;
             height: 450px;
@@ -220,7 +220,8 @@
 
         .floating-book {
             position: absolute;
-            border-radius: 6px;
+            background: var(--bg-white);
+            border-radius: 4px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
             overflow: hidden;
             transition: transform 0.4s ease;
@@ -246,7 +247,7 @@
             left: 35%;
             top: 5%;
             transform: rotate(3deg);
-            background: linear-gradient(135deg, #d7c5aa 0%, #b79b72 100%);
+            background: linear-gradient(135deg, #e8d5c4 0%, #d4c4b0 100%);
             z-index: 2;
         }
 
@@ -256,7 +257,7 @@
             right: 15%;
             top: 20%;
             transform: rotate(6deg);
-            background: linear-gradient(135deg, #466a8c 0%, #1d3557 100%);
+            background: linear-gradient(135deg, #c9a962 0%, #a08050 100%);
             z-index: 1;
         }
 
@@ -270,11 +271,15 @@
             color: white;
         }
 
+        .book-inner.light {
+            color: var(--text-dark);
+        }
+
         .book-tag {
             font-size: 0.55rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            opacity: 0.8;
+            opacity: 0.7;
             margin-bottom: 0.3rem;
         }
 
@@ -285,6 +290,29 @@
             line-height: 1.2;
         }
 
+        .discount-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-coral);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .discount-badge span {
+            font-size: 0.5rem;
+        }
+
+        /* Trust Badges */
         .trust-bar {
             background: var(--bg-white);
             border-top: 1px solid var(--border);
@@ -330,6 +358,7 @@
             color: var(--text-light);
         }
 
+        /* Section Styles */
         .section {
             padding: 5rem 4rem;
             max-width: 1300px;
@@ -340,7 +369,6 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            gap: 1rem;
             margin-bottom: 2.5rem;
         }
 
@@ -359,6 +387,9 @@
             font-size: 0.8rem;
             color: var(--text-mid);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
             transition: color 0.3s;
         }
 
@@ -366,6 +397,7 @@
             color: var(--text-dark);
         }
 
+        /* Category Pills */
         .categories {
             display: flex;
             gap: 0.8rem;
@@ -380,15 +412,19 @@
             border-radius: 50px;
             font-size: 0.8rem;
             color: var(--text-mid);
+            cursor: pointer;
+            transition: all 0.3s;
             text-decoration: none;
         }
 
+        .cat-pill:hover,
         .cat-pill.active {
             background: var(--text-dark);
             color: white;
             border-color: var(--text-dark);
         }
 
+        /* Books Grid */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -400,6 +436,7 @@
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
+            cursor: pointer;
             border: 1px solid var(--border);
         }
 
@@ -410,13 +447,12 @@
 
         .book-cover {
             width: 100%;
-            height: 240px;
+            height: 220px;
             background: linear-gradient(135deg, #2d3a4a, #1a2530);
             position: relative;
             display: flex;
-            align-items: end;
-            justify-content: start;
-            padding: 1rem;
+            align-items: center;
+            justify-content: center;
         }
 
         .book-cover-2 {
@@ -424,23 +460,21 @@
         }
 
         .book-cover-3 {
-            background: linear-gradient(135deg, #457b9d, #1d3557);
+            background: linear-gradient(135deg, #e07a5f, #c56b52);
         }
 
         .book-cover-4 {
-            background: linear-gradient(135deg, #e07a5f, #9d5d4c);
-        }
-
-        .book-cover-5 {
-            background: linear-gradient(135deg, #596b55, #2f3e2d);
+            background: linear-gradient(135deg, #457b9d, #1d3557);
         }
 
         .book-cover span {
             font-family: var(--serif);
             color: white;
-            font-size: 1.05rem;
-            line-height: 1.2;
-            max-width: 80%;
+            font-size: 1.1rem;
+            opacity: 0.85;
+            text-align: center;
+            padding: 0 1rem;
+            line-height: 1.3;
         }
 
         .book-info {
@@ -473,13 +507,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 0.8rem;
         }
 
         .book-price {
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .book-btn {
@@ -492,9 +525,8 @@
             justify-content: center;
             font-size: 0.9rem;
             color: var(--text-mid);
-            text-decoration: none;
             transition: all 0.3s;
-            flex-shrink: 0;
+            text-decoration: none;
         }
 
         .book-btn:hover {
@@ -502,6 +534,7 @@
             color: white;
         }
 
+        /* Author Spotlight */
         .spotlight-section {
             background: var(--bg-warm);
             padding: 5rem 4rem;
@@ -530,10 +563,9 @@
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: var(--accent-dark);
+            color: var(--text-light);
             border: 4px solid var(--bg-white);
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            font-family: var(--serif);
         }
 
         .author-name {
@@ -558,7 +590,7 @@
         .spotlight-books {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
 
         .spotlight-label {
@@ -566,18 +598,19 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--accent-dark);
+            margin-bottom: 0.5rem;
         }
 
         .spotlight-title {
             font-family: var(--serif);
             font-size: 1.6rem;
             font-weight: 500;
+            margin-bottom: 1rem;
         }
 
         .mini-books {
             display: flex;
             gap: 1rem;
-            margin-top: 0.5rem;
         }
 
         .mini-book {
@@ -586,6 +619,11 @@
             background: linear-gradient(135deg, #2d3a4a, #1a2530);
             border-radius: 4px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .mini-book:hover {
+            transform: translateY(-4px);
         }
 
         .mini-book-2 {
@@ -596,18 +634,7 @@
             background: linear-gradient(135deg, #457b9d, #1d3557);
         }
 
-        .reading-copy {
-            max-width: 760px;
-            color: var(--text-mid);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .single-feature {
-            max-width: 420px;
-        }
-
+        /* Testimonials */
         .testimonials-section {
             background: var(--bg-white);
             padding: 5rem 4rem;
@@ -646,6 +673,7 @@
             color: var(--text-dark);
         }
 
+        /* CTA Section */
         .cta-section {
             background: var(--text-dark);
             color: white;
@@ -654,7 +682,7 @@
         }
 
         .cta-inner {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -675,9 +703,8 @@
 
         .cta-text {
             font-size: 0.95rem;
-            color: #d4d4d4;
+            color: #aaa;
             margin-bottom: 2rem;
-            line-height: 1.8;
         }
 
         .cta-btn {
@@ -695,71 +722,59 @@
         }
 
         .cta-btn:hover {
+            background: var(--accent-hover, #dfc07a);
             transform: translateY(-2px);
         }
 
+        /* Newsletter / Contact */
         .newsletter {
             background: var(--bg-warm);
             padding: 4rem;
         }
 
         .newsletter-inner {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
             text-align: center;
         }
 
         .newsletter h3 {
             font-family: var(--serif);
-            font-size: 1.8rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .newsletter p {
-            font-size: 0.95rem;
-            color: var(--text-mid);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-
-        .contact-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.4rem;
-            text-align: left;
-        }
-
-        .contact-card h4 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent-dark);
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .contact-card p {
-            margin-bottom: 0.8rem;
+        .newsletter p {
             font-size: 0.9rem;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
         }
 
-        .contact-card a {
-            color: var(--text-dark);
+        .newsletter-form {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form a {
+            padding: 0.85rem 1.5rem;
+            background: var(--text-dark);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
             text-decoration: none;
-            font-weight: 600;
         }
 
-        .contact-card a:hover {
-            text-decoration: underline;
+        .newsletter-form a:hover {
+            background: #333;
         }
 
+        /* Footer */
         footer {
             background: var(--bg-white);
             padding: 4rem;
@@ -816,7 +831,6 @@
             border-top: 1px solid var(--border);
             max-width: 1100px;
             margin: 0 auto;
-            gap: 1rem;
         }
 
         .footer-bottom p {
@@ -848,110 +862,97 @@
             color: white;
         }
 
+        /* Responsive */
         @media (max-width: 1024px) {
             nav {
                 padding: 1rem 2rem;
             }
-
             .hero {
                 padding: 6rem 2rem 3rem;
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
             .hero-text {
                 max-width: 100%;
             }
-
             .hero-cta {
                 justify-content: center;
             }
-
             .hero-books {
                 height: 350px;
             }
-
-            .section,
-            .spotlight-section,
-            .testimonials-section,
-            .newsletter,
-            .cta-section,
-            footer,
-            .trust-bar {
-                padding-left: 2rem;
-                padding-right: 2rem;
+            .section {
+                padding: 4rem 2rem;
             }
-
             .books-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .trust-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .spotlight-inner {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
             .mini-books {
                 justify-content: center;
             }
-
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
             .nav-center {
                 display: none;
             }
-
             .hero-title {
                 font-size: 2.2rem;
             }
-
             .hero-cta {
                 flex-direction: column;
             }
-
-            .books-grid,
-            .trust-grid,
-            .contact-grid,
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
             .footer-grid {
                 grid-template-columns: 1fr;
             }
-
             .footer-bottom {
                 flex-direction: column;
+                gap: 1rem;
                 text-align: center;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <a href="#" class="logo">
             <div class="logo-mark">C</div>
             Centrinian
         </a>
-
         <ul class="nav-center">
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#books">Books</a></li>
-            <li><a href="#reading-groups">Reading Groups</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#submissions">Reading Groups</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-
         <div class="nav-right">
             <a class="nav-icon" href="https://www.facebook.com/" aria-label="Facebook">f</a>
             <a class="nav-icon" href="https://www.instagram.com/" aria-label="Instagram">◎</a>
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-text">
             <span class="hero-label">Diverse Expression | Limitless Creativity</span>
@@ -959,14 +960,13 @@
                 Stories That <span>Resonate,</span> Genres That Inspire
             </h1>
             <p class="hero-subtitle">
-                Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres. We connect innovative authors with readers, fostering a love for storytelling that transcends age and background.
+                Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres, connecting innovative authors with readers and fostering a love of storytelling across ages and backgrounds.
             </p>
             <div class="hero-cta">
-                <a href="#books" class="btn btn-primary">Browse Books</a>
+                <a href="#books" class="btn btn-primary">Browse Collection</a>
                 <a href="#about" class="btn btn-outline">About Us</a>
             </div>
         </div>
-
         <div class="hero-books">
             <div class="book-stack">
                 <div class="floating-book book-1">
@@ -976,10 +976,11 @@
                     </div>
                 </div>
                 <div class="floating-book book-2">
-                    <div class="book-inner">
+                    <div class="book-inner light">
                         <span class="book-tag">Arcadia • Book 2</span>
                         <span class="book-name">Blackout</span>
                     </div>
+                    <div class="discount-badge">2011<span>since</span></div>
                 </div>
                 <div class="floating-book book-3">
                     <div class="book-inner">
@@ -991,13 +992,14 @@
         </div>
     </section>
 
+    <!-- Trust Bar -->
     <div class="trust-bar">
         <div class="trust-grid">
             <div class="trust-item">
                 <div class="trust-icon">🏠</div>
                 <div class="trust-text">
                     <h4>Independent</h4>
-                    <p>Founded in London in 2011</p>
+                    <p>London-based since 2011</p>
                 </div>
             </div>
             <div class="trust-item">
@@ -1011,33 +1013,32 @@
                 <div class="trust-icon">✍️</div>
                 <div class="trust-text">
                     <h4>Quality First</h4>
-                    <p>Selective publishing approach</p>
+                    <p>Creative publishing focus</p>
                 </div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">🌍</div>
                 <div class="trust-text">
-                    <h4>Broad Access</h4>
-                    <p>Print and digital formats</p>
+                    <h4>Readers Worldwide</h4>
+                    <p>Stories for all ages</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Featured Books -->
     <section class="section" id="books">
         <div class="section-header">
             <h2>Featured <span>Books</span></h2>
-            <a href="https://centrinian.com/books/" class="view-all">View catalogue →</a>
+            <a href="https://centrinian.com/books/" class="view-all">View All →</a>
         </div>
-
         <div class="categories">
-            <span class="cat-pill active">Featured</span>
-            <span class="cat-pill">Arcadia</span>
-            <span class="cat-pill">Young Adult</span>
-            <span class="cat-pill">Non-Fiction</span>
-            <span class="cat-pill">Collection</span>
+            <a href="#" class="cat-pill active">All</a>
+            <a href="#" class="cat-pill">Fantasy</a>
+            <a href="#" class="cat-pill">Young Adult</a>
+            <a href="#" class="cat-pill">Fiction</a>
+            <a href="#" class="cat-pill">Non-Fiction</a>
         </div>
-
         <div class="books-grid">
             <div class="book-card">
                 <div class="book-cover">
@@ -1049,11 +1050,10 @@
                     <p class="book-author">by Al Stone</p>
                     <div class="book-footer">
                         <span class="book-price">Arcadia • Book 1</span>
-                        <a class="book-btn" href="https://centrinian.com/books/talisman-of-el/" aria-label="View Talisman Of El">→</a>
+                        <a class="book-btn" href="https://centrinian.com/books/talisman-of-el/">+</a>
                     </div>
                 </div>
             </div>
-
             <div class="book-card">
                 <div class="book-cover book-cover-2">
                     <span>Blackout</span>
@@ -1064,26 +1064,24 @@
                     <p class="book-author">by Al Stone</p>
                     <div class="book-footer">
                         <span class="book-price">Arcadia • Book 2</span>
-                        <a class="book-btn" href="https://centrinian.com/books/blackout/" aria-label="View Blackout">→</a>
+                        <a class="book-btn" href="https://centrinian.com/books/blackout/">+</a>
                     </div>
                 </div>
             </div>
-
             <div class="book-card">
                 <div class="book-cover book-cover-3">
                     <span>Ground Zero</span>
                 </div>
                 <div class="book-info">
-                    <p class="book-genre">Fantasy • Series</p>
+                    <p class="book-genre">YA • Adventure</p>
                     <h3 class="book-title">Ground Zero</h3>
                     <p class="book-author">by Al Stone</p>
                     <div class="book-footer">
                         <span class="book-price">Arcadia • Book 3</span>
-                        <a class="book-btn" href="https://centrinian.com/books/ground-zero/" aria-label="View Ground Zero">→</a>
+                        <a class="book-btn" href="https://centrinian.com/books/ground-zero/">+</a>
                     </div>
                 </div>
             </div>
-
             <div class="book-card">
                 <div class="book-cover book-cover-4">
                     <span>Arcadia: The Complete Collection</span>
@@ -1093,48 +1091,30 @@
                     <h3 class="book-title">Arcadia: The Complete Collection</h3>
                     <p class="book-author">by Al Stone</p>
                     <div class="book-footer">
-                        <span class="book-price">Anniversary collection</span>
-                        <a class="book-btn" href="https://centrinian.com/books/arcadia-the-complete-collection/" aria-label="View Arcadia collection">→</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book-card">
-                <div class="book-cover book-cover-5">
-                    <span>The Powerhouse Diet</span>
-                </div>
-                <div class="book-info">
-                    <p class="book-genre">Non-Fiction</p>
-                    <h3 class="book-title">The Powerhouse Diet</h3>
-                    <p class="book-author">Centrinian title</p>
-                    <div class="book-footer">
-                        <span class="book-price">Health & lifestyle</span>
-                        <a class="book-btn" href="https://centrinian.com/books/" aria-label="View Books">→</a>
+                        <span class="book-price">Complete Edition</span>
+                        <a class="book-btn" href="https://centrinian.com/books/arcadia-the-complete-collection/">+</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About / Spotlight -->
     <section class="spotlight-section" id="about">
         <div class="spotlight-inner">
             <div class="spotlight-author">
                 <div class="author-photo">C</div>
-                <h3 class="author-name">About Centrinian</h3>
+                <h3 class="author-name">Centrinian</h3>
                 <p class="author-role">Independent Publishing House</p>
                 <p class="author-bio">
-                    Founded in London on August 5, 2011, Centrinian publishes a broad range of quality fiction and non-fiction titles for adults and children.
+                    Founded in London on August 5, 2011, Centrinian publishes fiction and non-fiction for adults and children, with a strong commitment to quality, creativity, and fresh voices.
                 </p>
             </div>
-
             <div class="spotlight-books">
-                <span class="spotlight-label">Our Mission</span>
+                <span class="spotlight-label">About Us</span>
                 <h2 class="spotlight-title">Fresh ideas for a new generation of readers</h2>
-                <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.8;">
-                    Centrinian is a London-based independent publisher bringing passion for storytelling to readers everywhere. The company specialises in creative and innovative stories filled with mystery, magic and history, and welcomes compelling voices with a fresh vision.
-                </p>
-                <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.8;">
-                    Centrinian’s three divisions include Non-Fiction, Fiction, and Children’s Books. Its aim is to bridge the gap between fresh ideas and a new generation of readers while pursuing quality over quantity.
+                <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres. With divisions in Non-Fiction, Fiction, and Children’s Books, the company connects innovative authors with readers and fosters a love for storytelling that transcends age and background.
                 </p>
                 <div class="mini-books">
                     <div class="mini-book"></div>
@@ -1145,76 +1125,44 @@
         </div>
     </section>
 
-    <section class="section" id="reading-groups">
-        <div class="section-header">
-            <h2>Reading <span>Groups</span></h2>
-            <a href="https://centrinian.com/reading-groups/" class="view-all">Read more →</a>
-        </div>
-
-        <p class="reading-copy">
-            There is nothing better than sharing a great book with your family and friends. Our guides are here to heighten your discussions and make you have a better experience. Whether you are part of a book group or just an avid reader who loves great stories, you have come to the right place.
-        </p>
-
-        <div class="book-card single-feature">
-            <div class="book-cover">
-                <span>Talisman Of El</span>
-            </div>
-            <div class="book-info">
-                <p class="book-genre">Featured Reading Group Title</p>
-                <h3 class="book-title">Talisman Of El</h3>
-                <p class="book-author">by Al Stone</p>
-                <div class="book-footer">
-                    <span class="book-price">Acceptance, destiny, and the battle of good vs evil</span>
-                    <a class="book-btn" href="https://centrinian.com/reading-groups/" aria-label="Reading Groups">→</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="testimonials-inner">
             <div class="quote-mark">"</div>
             <p class="testimonial-text">
-                I loved this book. The world building of Arcadia was phenomenal. All the descriptions were so vivid, and I almost wanted to draw everything, because I felt like I was seeing it all play out right in front of me.
+                The world building of Arcadia was phenomenal. All the descriptions were so vivid — I felt like I was seeing it play out right in front of me.
             </p>
-            <p class="testimonial-author">— <strong>Danielle</strong>, Booktacular</p>
+            <p class="testimonial-author">— <strong>Verified Reader</strong></p>
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- Reading Groups / CTA -->
+    <section class="cta-section" id="submissions">
         <div class="cta-inner">
-            <p class="cta-label">Get In Touch</p>
-            <h2 class="cta-title">Queries? Comments? We want to hear it.</h2>
+            <p class="cta-label">Reading Groups</p>
+            <h2 class="cta-title">Share Great Books With Family And Friends</h2>
             <p class="cta-text">
-                Please note: we are unable to give you advice on your work. For sales enquiries and general enquiries, please contact Centrinian using the options below.
+                There is nothing better than sharing a great book with your family and friends. Our reading group guides are here to enrich discussion and make the reading experience even better, featuring titles such as Talisman Of El.
             </p>
-            <a class="cta-btn" href="#contact">Contact Us</a>
+            <a class="cta-btn" href="https://centrinian.com/reading-groups/">Explore Reading Groups</a>
         </div>
     </section>
 
-    <section class="newsletter" id="contact">
-        <div class="newsletter-inner">
-            <h3>Contact Centrinian</h3>
+    <!-- Contact -->
+    <section class="newsletter">
+        <div class="newsletter-inner" id="contact">
+            <h3>Queries? Comments? We want to hear it.</h3>
             <p>
-                GitHub Pages does not support the old WordPress contact form, so this page uses direct email links instead.
+                For sales enquiries and general enquiries, please get in touch. Please note that we are unable to give advice on submitted work.
             </p>
-
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h4>Sales Enquiries</h4>
-                    <p>For rights, retail, distribution, or commercial queries.</p>
-                    <a href="mailto:info@centrinian.com?subject=Sales%20Enquiry">Email sales enquiry</a>
-                </div>
-
-                <div class="contact-card">
-                    <h4>General Enquiries</h4>
-                    <p>For general questions, comments, or company-related messages.</p>
-                    <a href="mailto:info@centrinian.com?subject=General%20Enquiry">Email general enquiry</a>
-                </div>
+            <div class="newsletter-form">
+                <a href="mailto:info@centrinian.com?subject=General%20Enquiry">General Enquiry</a>
+                <a href="mailto:info@centrinian.com?subject=Sales%20Enquiry">Sales Enquiry</a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
@@ -1222,47 +1170,42 @@
                     <div class="logo-mark">C</div>
                     Centrinian
                 </a>
-                <p>
-                    An independent publishing house dedicated to delivering quality literature across diverse genres.
-                </p>
+                <p>An independent publishing house dedicated to delivering quality literature across diverse genres.</p>
             </div>
-
             <div class="footer-col">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#reading-groups">Reading Groups</a></li>
+                    <li><a href="https://centrinian.com/books/">All Books</a></li>
+                    <li><a href="#books">Featured Titles</a></li>
+                    <li><a href="https://centrinian.com/reading-groups/">Reading Groups</a></li>
                     <li><a href="https://www.thearcadiasaga.com/">Arcadia</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="https://centrinian.com/about-us/">About Us</a></li>
                     <li><a href="https://centrinian.com/imprints/">Imprints</a></li>
                     <li><a href="https://centrinian.com/careers/">Careers</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="https://centrinian.com/contact-us/">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
-                <h4>Follow</h4>
+                <h4>Support</h4>
                 <ul>
-                    <li><a href="https://www.facebook.com/">Facebook</a></li>
-                    <li><a href="https://www.x.com/">X</a></li>
-                    <li><a href="https://www.instagram.com/">Instagram</a></li>
-                    <li><a href="https://www.youtube.com/">YouTube</a></li>
+                    <li><a href="https://centrinian.com/contact-us/">Contact</a></li>
+                    <li><a href="https://centrinian.com/privacy-policy/">Privacy</a></li>
+                    <li><a href="https://centrinian.com/books/">Books</a></li>
+                    <li><a href="https://centrinian.com/reading-groups/">Reading Groups</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>© 2025 Centrinian. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/" aria-label="Facebook">f</a>
-                <a href="https://www.x.com/" aria-label="X">𝕏</a>
-                <a href="https://www.instagram.com/" aria-label="Instagram">◎</a>
+                <a href="https://www.facebook.com/">f</a>
+                <a href="https://www.x.com/">𝕏</a>
+                <a href="https://www.instagram.com/">◎</a>
             </div>
         </div>
     </footer>
