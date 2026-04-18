@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centrinian Publishing Ltd</title>
-    <meta name="description" content="Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,6 +39,7 @@
             line-height: 1.6;
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -108,13 +108,13 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: color 0.3s;
-            text-decoration: none;
         }
 
         .nav-icon:hover {
             color: var(--text-dark);
         }
 
+        /* Hero Section */
         .hero {
             padding: 7rem 4rem 4rem;
             display: grid;
@@ -180,7 +180,6 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            display: inline-block;
         }
 
         .btn-primary {
@@ -203,6 +202,7 @@
             border-color: var(--text-dark);
         }
 
+        /* Hero Books Display */
         .hero-books {
             position: relative;
             height: 450px;
@@ -311,6 +311,7 @@
             font-size: 0.5rem;
         }
 
+        /* Trust Badges */
         .trust-bar {
             background: var(--bg-white);
             border-top: 1px solid var(--border);
@@ -356,6 +357,7 @@
             color: var(--text-light);
         }
 
+        /* Section Styles */
         .section {
             padding: 5rem 4rem;
             max-width: 1300px;
@@ -394,6 +396,7 @@
             color: var(--text-dark);
         }
 
+        /* Category Pills */
         .categories {
             display: flex;
             gap: 0.8rem;
@@ -408,17 +411,19 @@
             border-radius: 50px;
             font-size: 0.8rem;
             color: var(--text-mid);
-            cursor: default;
+            cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
         }
 
+        .cat-pill:hover,
         .cat-pill.active {
             background: var(--text-dark);
             color: white;
             border-color: var(--text-dark);
         }
 
+        /* Books Grid */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -465,10 +470,7 @@
             font-family: var(--serif);
             color: white;
             font-size: 1.1rem;
-            opacity: 0.85;
-            text-align: center;
-            padding: 0 1rem;
-            line-height: 1.3;
+            opacity: 0.5;
         }
 
         .book-info {
@@ -506,7 +508,6 @@
         .book-price {
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 0.82rem;
         }
 
         .book-btn {
@@ -520,7 +521,6 @@
             font-size: 0.9rem;
             color: var(--text-mid);
             transition: all 0.3s;
-            text-decoration: none;
         }
 
         .book-btn:hover {
@@ -528,6 +528,7 @@
             color: white;
         }
 
+        /* Author Spotlight */
         .spotlight-section {
             background: var(--bg-warm);
             padding: 5rem 4rem;
@@ -627,6 +628,7 @@
             background: linear-gradient(135deg, #457b9d, #1d3557);
         }
 
+        /* Testimonials */
         .testimonials-section {
             background: var(--bg-white);
             padding: 5rem 4rem;
@@ -665,6 +667,7 @@
             color: var(--text-dark);
         }
 
+        /* CTA Section */
         .cta-section {
             background: var(--text-dark);
             color: white;
@@ -708,8 +711,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
         }
 
         .cta-btn:hover {
@@ -717,6 +718,7 @@
             transform: translateY(-2px);
         }
 
+        /* Newsletter */
         .newsletter {
             background: var(--bg-warm);
             padding: 4rem;
@@ -743,11 +745,19 @@
         .newsletter-form {
             display: flex;
             gap: 0.8rem;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
-        .newsletter-form a {
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: var(--sans);
+            background: var(--bg-white);
+        }
+
+        .newsletter-form button {
             padding: 0.85rem 1.5rem;
             background: var(--text-dark);
             color: white;
@@ -757,13 +767,13 @@
             font-weight: 500;
             cursor: pointer;
             transition: background 0.3s;
-            text-decoration: none;
         }
 
-        .newsletter-form a:hover {
+        .newsletter-form button:hover {
             background: #333;
         }
 
+        /* Footer */
         footer {
             background: var(--bg-white);
             padding: 4rem;
@@ -851,6 +861,7 @@
             color: white;
         }
 
+        /* Responsive */
         @media (max-width: 1024px) {
             nav {
                 padding: 1rem 2rem;
@@ -921,6 +932,7 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <a href="#" class="logo">
             <div class="logo-mark">C</div>
@@ -930,54 +942,56 @@
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#books">Books</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#submissions">Reading Groups</a></li>
+            <li><a href="#submissions">Submissions</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-right">
-            <a class="nav-icon" href="https://www.facebook.com/" aria-label="Facebook">f</a>
-            <a class="nav-icon" href="https://www.instagram.com/" aria-label="Instagram">◎</a>
+            <span class="nav-icon">🔍</span>
+            <span class="nav-icon">🛒</span>
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-text">
-            <span class="hero-label">DIVERSE EXPRESSION | LIMITLESS CREATIVITY</span>
+            <span class="hero-label">Independent Publisher Since 2011</span>
             <h1 class="hero-title">
                 Stories That <span>Resonate,</span> Genres That Inspire
             </h1>
             <p class="hero-subtitle">
-                Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres. Connecting innovative authors with readers and fostering a love for storytelling across ages and backgrounds.
+                Connecting innovative authors with readers worldwide. From captivating YA fantasy to thought-provoking fiction — discover your next favorite book.
             </p>
             <div class="hero-cta">
                 <a href="#books" class="btn btn-primary">Browse Collection</a>
-                <a href="#about" class="btn btn-outline">About Us</a>
+                <a href="#submissions" class="btn btn-outline">Submit Manuscript</a>
             </div>
         </div>
         <div class="hero-books">
             <div class="book-stack">
                 <div class="floating-book book-1">
                     <div class="book-inner">
-                        <span class="book-tag">ARCADIA • BOOK 1</span>
-                        <span class="book-name">Talisman Of El</span>
+                        <span class="book-tag">Fantasy</span>
+                        <span class="book-name">Talisman of El</span>
                     </div>
                 </div>
                 <div class="floating-book book-2">
                     <div class="book-inner light">
-                        <span class="book-tag">ARCADIA • BOOK 2</span>
+                        <span class="book-tag">YA Series</span>
                         <span class="book-name">Blackout</span>
                     </div>
-                    <div class="discount-badge">2011<span>since</span></div>
+                    <div class="discount-badge">10%<span>off</span></div>
                 </div>
                 <div class="floating-book book-3">
                     <div class="book-inner">
-                        <span class="book-tag">ARCADIA • BOOK 3</span>
-                        <span class="book-name">Ground Zero</span>
+                        <span class="book-tag">Adventure</span>
+                        <span class="book-name">Arcadia</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Trust Bar -->
     <div class="trust-bar">
         <div class="trust-grid">
             <div class="trust-item">
@@ -990,114 +1004,116 @@
             <div class="trust-item">
                 <div class="trust-icon">📚</div>
                 <div class="trust-text">
-                    <h4>Diverse Genres</h4>
-                    <p>Fiction and non-fiction</p>
+                    <h4>Quality First</h4>
+                    <p>Curated selection</p>
                 </div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">✍️</div>
                 <div class="trust-text">
-                    <h4>Quality First</h4>
-                    <p>Selective publishing</p>
+                    <h4>Author Focused</h4>
+                    <p>Supporting new voices</p>
                 </div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">🌍</div>
                 <div class="trust-text">
-                    <h4>Readers Worldwide</h4>
-                    <p>Stories across ages</p>
+                    <h4>Global Reach</h4>
+                    <p>Worldwide distribution</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Featured Books -->
     <section class="section" id="books">
         <div class="section-header">
             <h2>Featured <span>Books</span></h2>
-            <a href="https://centrinian.com/books/" class="view-all">View All →</a>
+            <a href="#" class="view-all">View All →</a>
         </div>
         <div class="categories">
-            <a class="cat-pill active">All</a>
-            <a class="cat-pill">Fantasy</a>
-            <a class="cat-pill">Young Adult</a>
-            <a class="cat-pill">Fiction</a>
-            <a class="cat-pill">Non-Fiction</a>
+            <a href="#" class="cat-pill active">All</a>
+            <a href="#" class="cat-pill">Fantasy</a>
+            <a href="#" class="cat-pill">Young Adult</a>
+            <a href="#" class="cat-pill">Fiction</a>
+            <a href="#" class="cat-pill">Non-Fiction</a>
         </div>
         <div class="books-grid">
             <div class="book-card">
                 <div class="book-cover">
-                    <span>Talisman Of El</span>
+                    <span>Cover</span>
                 </div>
                 <div class="book-info">
                     <p class="book-genre">Fantasy • YA</p>
-                    <h3 class="book-title">Talisman Of El</h3>
-                    <p class="book-author">by Al Stone</p>
+                    <h3 class="book-title">Talisman of El</h3>
+                    <p class="book-author">by Alecia Stone</p>
                     <div class="book-footer">
-                        <span class="book-price">Arcadia • Book 1</span>
-                        <a class="book-btn" href="https://centrinian.com/books/talisman-of-el/">+</a>
+                        <span class="book-price">£14.90</span>
+                        <span class="book-btn">+</span>
                     </div>
                 </div>
             </div>
             <div class="book-card">
                 <div class="book-cover book-cover-2">
-                    <span>Blackout</span>
+                    <span>Cover</span>
                 </div>
                 <div class="book-info">
                     <p class="book-genre">Fantasy • Series</p>
                     <h3 class="book-title">Blackout</h3>
-                    <p class="book-author">by Al Stone</p>
+                    <p class="book-author">by Alecia Stone</p>
                     <div class="book-footer">
-                        <span class="book-price">Arcadia • Book 2</span>
-                        <a class="book-btn" href="https://centrinian.com/books/blackout/">+</a>
+                        <span class="book-price">£12.65</span>
+                        <span class="book-btn">+</span>
                     </div>
                 </div>
             </div>
             <div class="book-card">
                 <div class="book-cover book-cover-3">
-                    <span>Ground Zero</span>
+                    <span>Cover</span>
                 </div>
                 <div class="book-info">
                     <p class="book-genre">YA • Adventure</p>
-                    <h3 class="book-title">Ground Zero</h3>
+                    <h3 class="book-title">Arcadia</h3>
                     <p class="book-author">by Al Stone</p>
                     <div class="book-footer">
-                        <span class="book-price">Arcadia • Book 3</span>
-                        <a class="book-btn" href="https://centrinian.com/books/ground-zero/">+</a>
+                        <span class="book-price">£16.90</span>
+                        <span class="book-btn">+</span>
                     </div>
                 </div>
             </div>
             <div class="book-card">
                 <div class="book-cover book-cover-4">
-                    <span>Arcadia: The Complete Collection</span>
+                    <span>Cover</span>
                 </div>
                 <div class="book-info">
-                    <p class="book-genre">Fantasy • Collection</p>
-                    <h3 class="book-title">Arcadia: The Complete Collection</h3>
-                    <p class="book-author">by Al Stone</p>
+                    <p class="book-genre">Fiction • Collection</p>
+                    <h3 class="book-title">Complete Series</h3>
+                    <p class="book-author">by Various Authors</p>
                     <div class="book-footer">
-                        <span class="book-price">Complete Edition</span>
-                        <a class="book-btn" href="https://centrinian.com/books/arcadia-the-complete-collection/">+</a>
+                        <span class="book-price">£32.75</span>
+                        <span class="book-btn">+</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Author Spotlight -->
     <section class="spotlight-section" id="about">
         <div class="spotlight-inner">
             <div class="spotlight-author">
-                <div class="author-photo">C</div>
-                <h3 class="author-name">Centrinian</h3>
-                <p class="author-role">Independent Publishing House</p>
+                <div class="author-photo">👤</div>
+                <h3 class="author-name">Alecia Stone</h3>
+                <p class="author-role">Featured Author</p>
                 <p class="author-bio">
-                    Founded in London on August 5, 2011, Centrinian publishes fiction and non-fiction for adults and children, with a strong commitment to quality, creativity, and fresh voices.
+                    Creator of the beloved T.O.E. Trilogy, Alecia brings vivid world-building and unforgettable characters to young adult fantasy.
                 </p>
             </div>
             <div class="spotlight-books">
-                <span class="spotlight-label">About Us</span>
-                <h2 class="spotlight-title">Fresh ideas for a new generation of readers</h2>
+                <span class="spotlight-label">Author Spotlight</span>
+                <h2 class="spotlight-title">The T.O.E. Trilogy</h2>
                 <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
-                    Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres. With divisions in Non-Fiction, Fiction, and Children’s Books, the company connects innovative authors with readers and fosters a love for storytelling that transcends age and background.
+                    A story about acceptance, destiny and the battle of good vs evil. This profound and breathtaking series takes you to a place you've never been before.
                 </p>
                 <div class="mini-books">
                     <div class="mini-book"></div>
@@ -1108,6 +1124,7 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="testimonials-inner">
             <div class="quote-mark">"</div>
@@ -1118,31 +1135,32 @@
         </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta-section" id="submissions">
         <div class="cta-inner">
-            <p class="cta-label">Reading Groups</p>
-            <h2 class="cta-title">Share Great Books With Family And Friends</h2>
+            <p class="cta-label">Now Open for Submissions</p>
+            <h2 class="cta-title">Share Your Story With The World</h2>
             <p class="cta-text">
-                There is nothing better than sharing a great book with your family and friends. Our guides are here to heighten your discussions and make you have a better experience, with featured titles including Talisman Of El.
+                We're actively seeking fresh voices in fiction and non-fiction. If you have a story that deserves to be told, we want to hear from you.
             </p>
-            <a class="cta-btn" href="https://centrinian.com/reading-groups/">Explore Reading Groups</a>
+            <button class="cta-btn">Submit Your Manuscript</button>
         </div>
     </section>
 
+    <!-- Newsletter -->
     <section class="newsletter">
         <div class="newsletter-inner">
-            <h3 id="contact">Queries? Comments? We want to hear it.</h3>
-            <p>
-                For sales enquiries and general enquiries, please get in touch. Please note that we are unable to give you advice on your work.
-            </p>
-            <div class="newsletter-form">
-                <a href="mailto:info@centrinian.com?subject=General%20Enquiry">General Enquiry</a>
-                <a href="mailto:info@centrinian.com?subject=Sales%20Enquiry">Sales Enquiry</a>
-            </div>
+            <h3>Stay in the Loop</h3>
+            <p>Get updates on new releases, author events, and exclusive offers.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer id="contact">
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="#" class="logo">
@@ -1154,37 +1172,37 @@
             <div class="footer-col">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="https://centrinian.com/books/">All Books</a></li>
-                    <li><a href="#books">Featured Titles</a></li>
-                    <li><a href="https://centrinian.com/reading-groups/">Reading Groups</a></li>
-                    <li><a href="https://www.thearcadiasaga.com/">Arcadia</a></li>
+                    <li><a href="#">All Books</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Authors</a></li>
+                    <li><a href="#">Reading Groups</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="https://centrinian.com/about-us/">About Us</a></li>
-                    <li><a href="https://centrinian.com/imprints/">Imprints</a></li>
-                    <li><a href="https://centrinian.com/careers/">Careers</a></li>
-                    <li><a href="https://centrinian.com/contact-us/">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Submissions</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="https://centrinian.com/contact-us/">Contact</a></li>
-                    <li><a href="https://centrinian.com/privacy-policy/">Privacy</a></li>
-                    <li><a href="https://centrinian.com/books/">Books</a></li>
-                    <li><a href="https://centrinian.com/reading-groups/">Reading Groups</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights</a></li>
+                    <li><a href="#">Privacy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Centrinian. All rights reserved.</p>
+            <p>© 2024 Centrinian Publishing Ltd. Registered in England No. 07730490</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/">f</a>
-                <a href="https://www.x.com/">𝕏</a>
-                <a href="https://www.instagram.com/">◎</a>
+                <a href="#">f</a>
+                <a href="#">𝕏</a>
+                <a href="#">◎</a>
             </div>
         </div>
     </footer>
