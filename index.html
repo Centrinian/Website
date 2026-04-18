@@ -1,10 +1,1210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrinian Publishing Ltd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-warm: #f5f1eb;
+            --bg-white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-mid: #555;
+            --text-light: #888;
+            --accent: #c9a962;
+            --accent-dark: #8b7355;
+            --accent-coral: #e07a5f;
+            --border: #e8e4de;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'DM Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 15px;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-center a {
+            color: var(--text-mid);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-center a:hover,
+        .nav-center a.active {
+            color: var(--text-dark);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-icon {
+            color: var(--text-mid);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-icon:hover {
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 7rem 4rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            min-height: 85vh;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title {
+            font-family: var(--serif);
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: var(--accent-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-mid);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.85rem 1.8rem;
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-dark);
+            border: 1.5px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-dark);
+        }
+
+        /* Hero Books Display */
+        .hero-books {
+            position: relative;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .book-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-book {
+            position: absolute;
+            background: var(--bg-white);
+            border-radius: 4px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .floating-book:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .book-1 {
+            width: 160px;
+            height: 240px;
+            left: 10%;
+            top: 15%;
+            transform: rotate(-8deg);
+            background: linear-gradient(135deg, #2d3a4a 0%, #1a2530 100%);
+            z-index: 3;
+        }
+
+        .book-2 {
+            width: 150px;
+            height: 220px;
+            left: 35%;
+            top: 5%;
+            transform: rotate(3deg);
+            background: linear-gradient(135deg, #e8d5c4 0%, #d4c4b0 100%);
+            z-index: 2;
+        }
+
+        .book-3 {
+            width: 155px;
+            height: 230px;
+            right: 15%;
+            top: 20%;
+            transform: rotate(6deg);
+            background: linear-gradient(135deg, #c9a962 0%, #a08050 100%);
+            z-index: 1;
+        }
+
+        .book-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            color: white;
+        }
+
+        .book-inner.light {
+            color: var(--text-dark);
+        }
+
+        .book-tag {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            margin-bottom: 0.3rem;
+        }
+
+        .book-name {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-coral);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .discount-badge span {
+            font-size: 0.5rem;
+        }
+
+        /* Trust Badges */
+        .trust-bar {
+            background: var(--bg-white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 4rem;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .trust-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--bg-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent-dark);
+        }
+
+        .trust-text h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.15rem;
+        }
+
+        .trust-text p {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .section-header h2 span {
+            font-style: italic;
+            color: var(--accent-dark);
+        }
+
+        .view-all {
+            font-size: 0.8rem;
+            color: var(--text-mid);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s;
+        }
+
+        .view-all:hover {
+            color: var(--text-dark);
+        }
+
+        /* Category Pills */
+        .categories {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cat-pill {
+            padding: 0.5rem 1.2rem;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-mid);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .cat-pill:hover,
+        .cat-pill.active {
+            background: var(--text-dark);
+            color: white;
+            border-color: var(--text-dark);
+        }
+
+        /* Books Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .book-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .book-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #2d3a4a, #1a2530);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-cover-2 {
+            background: linear-gradient(135deg, #c9a962, #8b7355);
+        }
+
+        .book-cover-3 {
+            background: linear-gradient(135deg, #e07a5f, #c56b52);
+        }
+
+        .book-cover-4 {
+            background: linear-gradient(135deg, #457b9d, #1d3557);
+        }
+
+        .book-cover span {
+            font-family: var(--serif);
+            color: white;
+            font-size: 1.1rem;
+            opacity: 0.5;
+        }
+
+        .book-info {
+            padding: 1.2rem;
+        }
+
+        .book-genre {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .book-title {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .book-author {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .book-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book-price {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .book-btn {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            transition: all 0.3s;
+        }
+
+        .book-btn:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        /* Author Spotlight */
+        .spotlight-section {
+            background: var(--bg-warm);
+            padding: 5rem 4rem;
+        }
+
+        .spotlight-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .spotlight-author {
+            text-align: center;
+        }
+
+        .author-photo {
+            width: 180px;
+            height: 180px;
+            background: var(--bg-white);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-light);
+            border: 4px solid var(--bg-white);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .author-name {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-role {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .author-bio {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+
+        .spotlight-books {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .spotlight-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .spotlight-title {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .mini-books {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mini-book {
+            width: 100px;
+            height: 150px;
+            background: linear-gradient(135deg, #2d3a4a, #1a2530);
+            border-radius: 4px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .mini-book:hover {
+            transform: translateY(-4px);
+        }
+
+        .mini-book-2 {
+            background: linear-gradient(135deg, #c9a962, #8b7355);
+        }
+
+        .mini-book-3 {
+            background: linear-gradient(135deg, #457b9d, #1d3557);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--bg-white);
+            padding: 5rem 4rem;
+        }
+
+        .testimonials-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .quote-mark {
+            font-family: var(--serif);
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.4;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+        }
+
+        .testimonial-author strong {
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--text-dark);
+            color: white;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cta-title {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            font-size: 0.95rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-hover, #dfc07a);
+            transform: translateY(-2px);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: var(--bg-warm);
+            padding: 4rem;
+        }
+
+        .newsletter-inner {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: var(--sans);
+            background: var(--bg-white);
+        }
+
+        .newsletter-form button {
+            padding: 0.85rem 1.5rem;
+            background: var(--text-dark);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-white);
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-top: 1rem;
+        }
+
+        .footer-col h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col a {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--text-dark);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-mid);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+            .hero {
+                padding: 6rem 2rem 3rem;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .hero-books {
+                height: 350px;
+            }
+            .section {
+                padding: 4rem 2rem;
+            }
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .spotlight-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .mini-books {
+                justify-content: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-center {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-cta {
+                flex-direction: column;
+            }
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello World</h1>
-  <p>This is my site on GitHub Pages.</p>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-mark">C</div>
+            Centrinian
+        </a>
+        <ul class="nav-center">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#submissions">Submissions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-icon">🛒</span>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="hero-label">Independent Publisher Since 2011</span>
+            <h1 class="hero-title">
+                Stories That <span>Resonate,</span> Genres That Inspire
+            </h1>
+            <p class="hero-subtitle">
+                Connecting innovative authors with readers worldwide. From captivating YA fantasy to thought-provoking fiction — discover your next favorite book.
+            </p>
+            <div class="hero-cta">
+                <a href="#books" class="btn btn-primary">Browse Collection</a>
+                <a href="#submissions" class="btn btn-outline">Submit Manuscript</a>
+            </div>
+        </div>
+        <div class="hero-books">
+            <div class="book-stack">
+                <div class="floating-book book-1">
+                    <div class="book-inner">
+                        <span class="book-tag">Fantasy</span>
+                        <span class="book-name">Talisman of El</span>
+                    </div>
+                </div>
+                <div class="floating-book book-2">
+                    <div class="book-inner light">
+                        <span class="book-tag">YA Series</span>
+                        <span class="book-name">Blackout</span>
+                    </div>
+                    <div class="discount-badge">10%<span>off</span></div>
+                </div>
+                <div class="floating-book book-3">
+                    <div class="book-inner">
+                        <span class="book-tag">Adventure</span>
+                        <span class="book-name">Arcadia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">🏠</div>
+                <div class="trust-text">
+                    <h4>Independent</h4>
+                    <p>London-based since 2011</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">📚</div>
+                <div class="trust-text">
+                    <h4>Quality First</h4>
+                    <p>Curated selection</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✍️</div>
+                <div class="trust-text">
+                    <h4>Author Focused</h4>
+                    <p>Supporting new voices</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🌍</div>
+                <div class="trust-text">
+                    <h4>Global Reach</h4>
+                    <p>Worldwide distribution</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Books -->
+    <section class="section" id="books">
+        <div class="section-header">
+            <h2>Featured <span>Books</span></h2>
+            <a href="#" class="view-all">View All →</a>
+        </div>
+        <div class="categories">
+            <a href="#" class="cat-pill active">All</a>
+            <a href="#" class="cat-pill">Fantasy</a>
+            <a href="#" class="cat-pill">Young Adult</a>
+            <a href="#" class="cat-pill">Fiction</a>
+            <a href="#" class="cat-pill">Non-Fiction</a>
+        </div>
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-cover">
+                    <span>Cover</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-genre">Fantasy • YA</p>
+                    <h3 class="book-title">Talisman of El</h3>
+                    <p class="book-author">by Alecia Stone</p>
+                    <div class="book-footer">
+                        <span class="book-price">£14.90</span>
+                        <span class="book-btn">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-cover book-cover-2">
+                    <span>Cover</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-genre">Fantasy • Series</p>
+                    <h3 class="book-title">Blackout</h3>
+                    <p class="book-author">by Alecia Stone</p>
+                    <div class="book-footer">
+                        <span class="book-price">£12.65</span>
+                        <span class="book-btn">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-cover book-cover-3">
+                    <span>Cover</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-genre">YA • Adventure</p>
+                    <h3 class="book-title">Arcadia</h3>
+                    <p class="book-author">by Al Stone</p>
+                    <div class="book-footer">
+                        <span class="book-price">£16.90</span>
+                        <span class="book-btn">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-cover book-cover-4">
+                    <span>Cover</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-genre">Fiction • Collection</p>
+                    <h3 class="book-title">Complete Series</h3>
+                    <p class="book-author">by Various Authors</p>
+                    <div class="book-footer">
+                        <span class="book-price">£32.75</span>
+                        <span class="book-btn">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Spotlight -->
+    <section class="spotlight-section" id="about">
+        <div class="spotlight-inner">
+            <div class="spotlight-author">
+                <div class="author-photo">👤</div>
+                <h3 class="author-name">Alecia Stone</h3>
+                <p class="author-role">Featured Author</p>
+                <p class="author-bio">
+                    Creator of the beloved T.O.E. Trilogy, Alecia brings vivid world-building and unforgettable characters to young adult fantasy.
+                </p>
+            </div>
+            <div class="spotlight-books">
+                <span class="spotlight-label">Author Spotlight</span>
+                <h2 class="spotlight-title">The T.O.E. Trilogy</h2>
+                <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    A story about acceptance, destiny and the battle of good vs evil. This profound and breathtaking series takes you to a place you've never been before.
+                </p>
+                <div class="mini-books">
+                    <div class="mini-book"></div>
+                    <div class="mini-book mini-book-2"></div>
+                    <div class="mini-book mini-book-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="testimonials-inner">
+            <div class="quote-mark">"</div>
+            <p class="testimonial-text">
+                The world building of Arcadia was phenomenal. All the descriptions were so vivid — I felt like I was seeing it play out right in front of me.
+            </p>
+            <p class="testimonial-author">— <strong>Verified Reader</strong></p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="submissions">
+        <div class="cta-inner">
+            <p class="cta-label">Now Open for Submissions</p>
+            <h2 class="cta-title">Share Your Story With The World</h2>
+            <p class="cta-text">
+                We're actively seeking fresh voices in fiction and non-fiction. If you have a story that deserves to be told, we want to hear from you.
+            </p>
+            <button class="cta-btn">Submit Your Manuscript</button>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-inner">
+            <h3>Stay in the Loop</h3>
+            <p>Get updates on new releases, author events, and exclusive offers.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <div class="logo-mark">C</div>
+                    Centrinian
+                </a>
+                <p>An independent publishing house dedicated to delivering quality literature across diverse genres.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">All Books</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Authors</a></li>
+                    <li><a href="#">Reading Groups</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Submissions</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Rights</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Centrinian Publishing Ltd. Registered in England No. 07730490</p>
+            <div class="social-links">
+                <a href="#">f</a>
+                <a href="#">𝕏</a>
+                <a href="#">◎</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
