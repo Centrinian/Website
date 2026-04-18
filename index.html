@@ -40,7 +40,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -116,7 +115,6 @@
             color: var(--text-dark);
         }
 
-        /* Hero Section */
         .hero {
             padding: 7rem 4rem 4rem;
             display: grid;
@@ -205,7 +203,6 @@
             border-color: var(--text-dark);
         }
 
-        /* Hero Books Display */
         .hero-books {
             position: relative;
             height: 450px;
@@ -314,7 +311,6 @@
             font-size: 0.5rem;
         }
 
-        /* Trust Badges */
         .trust-bar {
             background: var(--bg-white);
             border-top: 1px solid var(--border);
@@ -360,7 +356,6 @@
             color: var(--text-light);
         }
 
-        /* Section Styles */
         .section {
             padding: 5rem 4rem;
             max-width: 1300px;
@@ -399,7 +394,6 @@
             color: var(--text-dark);
         }
 
-        /* Category Pills */
         .categories {
             display: flex;
             gap: 0.8rem;
@@ -414,19 +408,17 @@
             border-radius: 50px;
             font-size: 0.8rem;
             color: var(--text-mid);
-            cursor: pointer;
+            cursor: default;
             transition: all 0.3s;
             text-decoration: none;
         }
 
-        .cat-pill:hover,
         .cat-pill.active {
             background: var(--text-dark);
             color: white;
             border-color: var(--text-dark);
         }
 
-        /* Books Grid */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -514,7 +506,7 @@
         .book-price {
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 0.8rem;
+            font-size: 0.82rem;
         }
 
         .book-btn {
@@ -536,7 +528,6 @@
             color: white;
         }
 
-        /* Author Spotlight */
         .spotlight-section {
             background: var(--bg-warm);
             padding: 5rem 4rem;
@@ -636,7 +627,6 @@
             background: linear-gradient(135deg, #457b9d, #1d3557);
         }
 
-        /* Testimonials */
         .testimonials-section {
             background: var(--bg-white);
             padding: 5rem 4rem;
@@ -675,7 +665,6 @@
             color: var(--text-dark);
         }
 
-        /* CTA Section */
         .cta-section {
             background: var(--text-dark);
             color: white;
@@ -728,7 +717,6 @@
             transform: translateY(-2px);
         }
 
-        /* Newsletter */
         .newsletter {
             background: var(--bg-warm);
             padding: 4rem;
@@ -776,7 +764,6 @@
             background: #333;
         }
 
-        /* Footer */
         footer {
             background: var(--bg-white);
             padding: 4rem;
@@ -864,7 +851,6 @@
             color: white;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             nav {
                 padding: 1rem 2rem;
@@ -935,7 +921,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <a href="#" class="logo">
             <div class="logo-mark">C</div>
@@ -954,15 +939,14 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-text">
-            <span class="hero-label">Diverse Expression | Limitless Creativity</span>
+            <span class="hero-label">DIVERSE EXPRESSION | LIMITLESS CREATIVITY</span>
             <h1 class="hero-title">
                 Stories That <span>Resonate,</span> Genres That Inspire
             </h1>
             <p class="hero-subtitle">
-                Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres, connecting innovative authors with readers and fostering a love of storytelling across ages and backgrounds.
+                Centrinian is an independent publishing house dedicated to delivering quality literature across diverse genres. Connecting innovative authors with readers and fostering a love for storytelling across ages and backgrounds.
             </p>
             <div class="hero-cta">
                 <a href="#books" class="btn btn-primary">Browse Collection</a>
@@ -973,20 +957,20 @@
             <div class="book-stack">
                 <div class="floating-book book-1">
                     <div class="book-inner">
-                        <span class="book-tag">Arcadia • Book 1</span>
+                        <span class="book-tag">ARCADIA • BOOK 1</span>
                         <span class="book-name">Talisman Of El</span>
                     </div>
                 </div>
                 <div class="floating-book book-2">
                     <div class="book-inner light">
-                        <span class="book-tag">Arcadia • Book 2</span>
+                        <span class="book-tag">ARCADIA • BOOK 2</span>
                         <span class="book-name">Blackout</span>
                     </div>
                     <div class="discount-badge">2011<span>since</span></div>
                 </div>
                 <div class="floating-book book-3">
                     <div class="book-inner">
-                        <span class="book-tag">Arcadia • Book 3</span>
+                        <span class="book-tag">ARCADIA • BOOK 3</span>
                         <span class="book-name">Ground Zero</span>
                     </div>
                 </div>
@@ -994,7 +978,6 @@
         </div>
     </section>
 
-    <!-- Trust Bar -->
     <div class="trust-bar">
         <div class="trust-grid">
             <div class="trust-item">
@@ -1015,31 +998,30 @@
                 <div class="trust-icon">✍️</div>
                 <div class="trust-text">
                     <h4>Quality First</h4>
-                    <p>Creative publishing focus</p>
+                    <p>Selective publishing</p>
                 </div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">🌍</div>
                 <div class="trust-text">
                     <h4>Readers Worldwide</h4>
-                    <p>Stories for all ages</p>
+                    <p>Stories across ages</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Featured Books -->
     <section class="section" id="books">
         <div class="section-header">
             <h2>Featured <span>Books</span></h2>
             <a href="https://centrinian.com/books/" class="view-all">View All →</a>
         </div>
         <div class="categories">
-            <a href="#" class="cat-pill active">All</a>
-            <a href="#" class="cat-pill">Fantasy</a>
-            <a href="#" class="cat-pill">Young Adult</a>
-            <a href="#" class="cat-pill">Fiction</a>
-            <a href="#" class="cat-pill">Non-Fiction</a>
+            <a class="cat-pill active">All</a>
+            <a class="cat-pill">Fantasy</a>
+            <a class="cat-pill">Young Adult</a>
+            <a class="cat-pill">Fiction</a>
+            <a class="cat-pill">Non-Fiction</a>
         </div>
         <div class="books-grid">
             <div class="book-card">
@@ -1101,7 +1083,6 @@
         </div>
     </section>
 
-    <!-- Author Spotlight -->
     <section class="spotlight-section" id="about">
         <div class="spotlight-inner">
             <div class="spotlight-author">
@@ -1127,7 +1108,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="testimonials-inner">
             <div class="quote-mark">"</div>
@@ -1138,24 +1118,22 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section" id="submissions">
         <div class="cta-inner">
             <p class="cta-label">Reading Groups</p>
             <h2 class="cta-title">Share Great Books With Family And Friends</h2>
             <p class="cta-text">
-                There is nothing better than sharing a great book with your family and friends. Our reading group guides are here to enrich discussion and make the reading experience even better, featuring titles such as Talisman Of El.
+                There is nothing better than sharing a great book with your family and friends. Our guides are here to heighten your discussions and make you have a better experience, with featured titles including Talisman Of El.
             </p>
             <a class="cta-btn" href="https://centrinian.com/reading-groups/">Explore Reading Groups</a>
         </div>
     </section>
 
-    <!-- Contact -->
     <section class="newsletter">
         <div class="newsletter-inner">
             <h3 id="contact">Queries? Comments? We want to hear it.</h3>
             <p>
-                For sales enquiries and general enquiries, please get in touch. Please note that we are unable to give advice on submitted work.
+                For sales enquiries and general enquiries, please get in touch. Please note that we are unable to give you advice on your work.
             </p>
             <div class="newsletter-form">
                 <a href="mailto:info@centrinian.com?subject=General%20Enquiry">General Enquiry</a>
@@ -1164,7 +1142,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
