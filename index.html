@@ -82,18 +82,14 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.06);
+      background: linear-gradient(135deg, #cfb270, #b78e3e);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1rem;
       box-shadow: var(--shadow);
-      overflow: hidden;
       flex: 0 0 auto;
-    }
-
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
     }
 
     .brand h1 {
@@ -235,10 +231,6 @@
       overflow: hidden;
       background: #fff;
       border: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .book-cover::before {
-      display: none;
     }
 
     .book-cover img,
@@ -639,9 +631,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="Centrinian home">
-        <span class="brand-mark">
-          <img src="https://centrinian.com/wp-content/uploads/2020/09/cropped-New-Centrinian-Logo-300x300.png" alt="Centrinian logo" />
-        </span>
+        <span class="brand-mark">C</span>
         <h1>Centrinian</h1>
       </a>
 
@@ -679,16 +669,16 @@
           <div class="hero-glow"></div>
           <div class="book-fan">
             <article class="book-cover cover-1">
-              <img src="https://centrinian.com/wp-content/uploads/2020/09/9780995494114-217x300.jpg" alt="Talisman of El book cover" />
+              <img src="images/talisman-of-el.jpg" alt="Talisman of El book cover" />
             </article>
 
             <article class="book-cover cover-2">
               <div class="sale-badge">Book<br />2</div>
-              <img src="https://centrinian.com/wp-content/uploads/2020/09/9780995494138-217x300.jpg" alt="Blackout book cover" />
+              <img src="images/blackout.jpg" alt="Blackout book cover" />
             </article>
 
             <article class="book-cover cover-3">
-              <img src="https://centrinian.com/wp-content/uploads/2022/05/9780995494169-217x300.jpg" alt="Arcadia The Complete Collection book cover" />
+              <img src="images/arcadia-complete-collection.jpg" alt="Arcadia The Complete Collection book cover" />
             </article>
           </div>
         </div>
@@ -746,7 +736,7 @@
           <article class="book-card">
             <div class="art">
               <div class="art-inner">
-                <img src="https://centrinian.com/wp-content/uploads/2020/09/9780995494114-217x300.jpg" alt="Talisman Of El cover" loading="lazy" />
+                <img src="images/talisman-of-el.jpg" alt="Talisman Of El cover" loading="lazy" />
               </div>
             </div>
             <div class="book-body">
@@ -766,7 +756,7 @@
           <article class="book-card">
             <div class="art">
               <div class="art-inner">
-                <img src="https://centrinian.com/wp-content/uploads/2020/09/9780995494138-217x300.jpg" alt="Blackout cover" loading="lazy" />
+                <img src="images/blackout.jpg" alt="Blackout cover" loading="lazy" />
               </div>
             </div>
             <div class="book-body">
@@ -786,7 +776,7 @@
           <article class="book-card">
             <div class="art">
               <div class="art-inner">
-                <img src="https://centrinian.com/wp-content/uploads/2020/09/9780995494176-217x300.jpg" alt="Ground Zero cover" loading="lazy" />
+                <img src="images/ground-zero.jpg" alt="Ground Zero cover" loading="lazy" />
               </div>
             </div>
             <div class="book-body">
@@ -806,7 +796,7 @@
           <article class="book-card">
             <div class="art">
               <div class="art-inner">
-                <img src="https://centrinian.com/wp-content/uploads/2022/05/9780995494169-217x300.jpg" alt="Arcadia The Complete Collection cover" loading="lazy" />
+                <img src="images/arcadia-complete-collection.jpg" alt="Arcadia The Complete Collection cover" loading="lazy" />
               </div>
             </div>
             <div class="book-body">
@@ -826,7 +816,7 @@
           <article class="book-card">
             <div class="art">
               <div class="art-inner">
-                <img src="https://centrinian.com/wp-content/uploads/2023/04/9780995494183-217x300.jpg" alt="The Powerhouse Diet cover" loading="lazy" />
+                <img src="images/powerhouse-diet.jpg" alt="The Powerhouse Diet cover" loading="lazy" />
               </div>
             </div>
             <div class="book-body">
