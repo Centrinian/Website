@@ -344,7 +344,6 @@
     .book-card,
     .panel,
     .contact-card,
-    .submission-card,
     .reading-card {
       background: rgba(255, 255, 255, 0.82);
       border: 1px solid var(--line);
@@ -376,14 +375,14 @@
       display: block;
       overflow: hidden;
       box-shadow: 0 18px 30px rgba(0,0,0,0.14);
-      background: transparent;
+      background: #fff;
     }
 
     .art-inner img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: transparent;
+      background: #fff;
     }
 
     .book-body {
@@ -415,7 +414,6 @@
     .book-body h4,
     .panel h4,
     .contact-card h4,
-    .submission-card h4,
     .reading-card h4 {
       margin: 0;
       font-size: 1.2rem;
@@ -425,10 +423,8 @@
     .book-body p,
     .panel p,
     .contact-card p,
-    .submission-card p,
     .reading-card p,
-    .panel li,
-    .submission-card li {
+    .panel li {
       margin: 0;
       color: var(--muted);
     }
@@ -470,19 +466,16 @@
       padding: 1.4rem;
     }
 
-    .panel ul,
-    .submission-card ul {
+    .panel ul {
       margin: 0.8rem 0 0;
       padding-left: 1.1rem;
     }
 
     .reading-card,
-    .contact-card,
-    .submission-card {
+    .contact-card {
       padding: 1.35rem;
     }
 
-    .submission-grid,
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -609,7 +602,6 @@
       .hero-grid,
       .two-col,
       .three-col,
-      .submission-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -651,7 +643,6 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#books">Books</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#submissions">Submissions</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -669,7 +660,7 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#books">Browse Collection</a>
-            <a class="button button-secondary" href="#submissions">Submit Manuscript</a>
+            <a class="button button-secondary" href="#contact">Contact Us</a>
           </div>
         </div>
 
@@ -1021,99 +1012,6 @@
       </div>
     </section>
 
-    <section id="submissions">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Submissions</span>
-            <h3>Built for direct, clear manuscript enquiries.</h3>
-          </div>
-          <p>
-            This section mirrors the current submissions guidance and keeps it in a simpler, easier-to-read GitHub Pages layout.
-          </p>
-        </div>
-
-        <div class="submission-grid">
-          <article class="submission-card">
-            <h4>Current status</h4>
-            <p style="margin-top: 0.8rem;"><strong>General submissions are currently closed.</strong></p>
-            <p style="margin-top: 0.8rem;">
-              General submissions open quarterly in <strong>March</strong>, <strong>June</strong>, <strong>September</strong> and <strong>December</strong>.
-              A literary agent is not required.
-            </p>
-            <div class="notice">
-              Submissions email: <a href="mailto:submissions@centrinian.com"><strong>submissions@centrinian.com</strong></a>
-            </div>
-          </article>
-
-          <article class="submission-card">
-            <h4>General information</h4>
-            <ul>
-              <li>Only a limited number of books are published each year.</li>
-              <li>Unsolicited manuscripts are accepted during open periods.</li>
-              <li>All material must be new and previously unpublished.</li>
-              <li>If work has been denied, wait six months before resubmitting.</li>
-              <li>Centrinian is a royalty-paying publisher with no editing or publishing fees.</li>
-              <li>Books are published in print, ebook and audio formats.</li>
-            </ul>
-          </article>
-
-          <article class="submission-card">
-            <h4>Genres accepted</h4>
-            <div class="pill-row" style="margin-top: 1rem;">
-              <span class="pill">Action / Adventure</span>
-              <span class="pill">Suspense / Thriller / Crime</span>
-              <span class="pill">Fantasy / Sci-Fi</span>
-              <span class="pill">Paranormal</span>
-              <span class="pill">Children’s Fiction</span>
-              <span class="pill">Horror</span>
-              <span class="pill">Romance</span>
-              <span class="pill">Mystery</span>
-              <span class="pill">Historical Fiction</span>
-              <span class="pill">Literary Fiction</span>
-              <span class="pill">Comic / Graphic Novel</span>
-              <span class="pill">Biography</span>
-              <span class="pill">Memoir</span>
-              <span class="pill">Essays</span>
-              <span class="pill">Poetry</span>
-              <span class="pill">Self-help</span>
-            </div>
-          </article>
-
-          <article class="submission-card">
-            <h4>What to send</h4>
-            <ul>
-              <li>Subject line: Query – Book Title / Name of Author / Book Genre</li>
-              <li>A concise query letter with email address, phone number and relevant background</li>
-              <li>Whether the submission is exclusive or non-exclusive</li>
-              <li>A 1–2 page synopsis</li>
-              <li>The first three chapters</li>
-              <li>For poetry: no more than six original poems</li>
-            </ul>
-          </article>
-
-          <article class="submission-card">
-            <h4>Important restrictions</h4>
-            <ul>
-              <li>Email queries only</li>
-              <li>Paste submissions in the email body</li>
-              <li>Do not send attachments unless requested</li>
-              <li>No postal submissions</li>
-              <li>No screenplays</li>
-              <li>No unfinished manuscripts except by referral</li>
-            </ul>
-          </article>
-
-          <article class="submission-card">
-            <h4>Response expectations</h4>
-            <p style="margin-top: 0.8rem;">
-              A large volume of submissions is received, so replies may take weeks. Writers are asked not to follow up until
-              <strong>12 weeks</strong> have elapsed. An automated acknowledgement email should be sent after receipt.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section id="contact">
       <div class="container">
@@ -1123,22 +1021,15 @@
             <h3>Queries? Comments? We want to hear it.</h3>
           </div>
           <p>
-            Centrinian cannot give advice on your work and directs publishing enquiries to the submissions page.
+            For general enquiries, sales enquiries and reader questions, please get in touch using the details below.
           </p>
         </div>
 
         <div class="contact-grid">
           <article class="contact-card">
             <h4>Contact notes</h4>
-            <p style="margin-top: 0.8rem;">Use this section for sales enquiries, general enquiries and manuscript-related signposting.</p>
+            <p style="margin-top: 0.8rem;">Use this section for sales enquiries, general enquiries and reader support.</p>
             <div class="contact-list">
-              <div class="contact-chip">
-                <div>📩</div>
-                <div>
-                  <strong>Submissions</strong>
-                  <span class="soft"><a href="mailto:submissions@centrinian.com">submissions@centrinian.com</a></span>
-                </div>
-              </div>
               <div class="contact-chip">
                 <div>💼</div>
                 <div>
@@ -1194,7 +1085,6 @@
         <a href="#home">Home</a>
         <a href="#books">Books</a>
         <a href="#about">About</a>
-        <a href="#submissions">Submissions</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
